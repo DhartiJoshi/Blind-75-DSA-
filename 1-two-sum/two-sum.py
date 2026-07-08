@@ -1,14 +1,11 @@
 class Solution:
-    def twoSum(self, nums, target):
-        num_map = {}
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        prevMap = {} #val : index
 
-        for i, num in enumerate(nums):
-            complement = target - num
-
-            if complement in num_map:
-                return [num_map[complement], i]
-
-            num_map[num] = i
-
-
+        for i, n in enumerate(nums):
+            diff = target - n
+            if diff in prevMap:
+                return [prevMap[diff], i]
+            prevMap[n] = i
+        return
         
